@@ -36,7 +36,10 @@ class Dresseur {
     ajouterPokemon(pokemon) {
         this.pokemons.push(pokemon);
     }
-
+/*
+La méthode find exécute la fonction callback une fois pour chaque élément présent dans le tableau jusqu'à ce qu'elle retourne une valeur vraie (qui peut être convertie en true ). 
+Si un élément est trouvé, find retourne immédiatement la valeur de l'élément.
+*/
     choisirPokemon() {
         return this.pokemons.find(pokemon => !pokemon.estKO());
     }
@@ -44,7 +47,10 @@ class Dresseur {
     ajouterObjet(objet) {
         this.inventaire.push(objet);
     }
-
+/*
+La méthode find exécute la fonction callback une fois pour chaque élément présent dans le tableau jusqu'à ce qu'elle retourne une valeur vraie (qui peut être convertie en true ). 
+Si un élément est trouvé, find retourne immédiatement la valeur de l'élément.
+*/
     utiliserObjet(nomObjet, cible) {
         const objet = this.inventaire.find(o => o.nom === nomObjet);
         if (objet) {
@@ -52,7 +58,9 @@ class Dresseur {
             this.inventaire = this.inventaire.filter(o => o.nom !== nomObjet);
         }
     }
-
+/*
+La méthode every() permet de tester si tous les éléments d'un tableau vérifient une condition donnée par une fonction en argument. 
+*/
     tousPokemonKO() {
         return this.pokemons.every(pokemon => pokemon.estKO());
     }
